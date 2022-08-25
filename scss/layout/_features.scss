@@ -1,0 +1,12 @@
+.features {
+    grid-column: center-start / center-end;
+    margin: 15rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    align-items: start;
+    gap: 6rem;
+
+    @include respond(phone) {
+        margin: 10rem 0;
+    }
+} 

@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    list-style: none;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;    // 1rem = 10px ; 10/16 = 62.5%
+
+    @include respond(tab-land) {
+        font-size: 50%;    // 1rem = 8px ; 8/16 = 50%
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%;    // 1rem = 12px ; 12/16 = 75%
+    }
+}
+
+body {
+    color: $color-grey-dark-2;
+    font: 300 1rem/1.6 $font-primary;
+    box-sizing: border-box;
+}
+
+::selection {
+    color: $color-white;
+    background: $color-primary;
+}
+
+.container {
+    max-width: 180rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: 
+        [sidebar-start] 8rem [sidebar-end full-start]
+        minmax(6rem,1fr) [center-start]
+        repeat(8,[col-start] minmax(min-content,14rem) [col-end]) [center-end]
+        minmax(6rem,1fr) [full-end];
+
+    @include respond(tab-land) {
+        grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns: 
+            [full-start] minmax(6rem,1fr) [center-start]
+            repeat(8,[col-start] minmax(min-content,14rem) [col-end]) [center-end]
+            minmax(6rem,1fr) [full-end];
+    }
+
+    @include respond(tab-port) {
+        grid-template-rows: 6rem 80vh min-content max-content 40vw repeat(3, min-content);
+        grid-template-columns: 
+            [full-start] minmax(6rem,1fr) [center-start]
+            repeat(8,[col-start] minmax(min-content,14rem) [col-end]) [center-end]
+            minmax(6rem,1fr) [full-end];
+    }
+
+    @include respond(tab-port) {
+        grid-template-rows: 6rem calc(100vh - 6rem);
+    }
+}

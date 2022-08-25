@@ -1,0 +1,42 @@
+.heading-primary,
+.heading-tertiary,
+.heading-quaternary {
+    font-family: $font-display;
+    font-weight: 400;
+}
+
+.heading-primary {
+    color: $color-grey-light-1;
+    font-size: 4.5rem;
+
+    @include respond(tab-land) {
+        font-size: 3.7rem;
+    }
+}
+
+.heading-secondary {
+    color: $color-grey-dark-1;
+    font: italic 400 4rem/1 $font-display;
+
+    @include respond(tab-land) {
+        font-size: 3.3rem;
+    }
+}
+
+.heading-tertiary {
+    color: $color-primary;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.heading-quaternary {
+    font-size: 1.9rem;
+
+    &--light {
+        color: $color-white;
+    }
+
+    &--dark {
+        color: $color-grey-dark-1;
+    }
+}

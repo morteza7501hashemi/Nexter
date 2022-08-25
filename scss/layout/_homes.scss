@@ -1,0 +1,12 @@
+.homes {
+    grid-column: center-start / center-end;
+    margin: 15rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7rem;
+
+    @include respond(phone) {
+        margin: 10rem 0;
+    }
+} 
